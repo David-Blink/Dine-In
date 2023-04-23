@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Assets/Style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <title>Portal</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="Assets/slide.html">
+                <h1>Create Account</h1>
+                <input type="text" placeholder="Name"  />
+                <input type="tel" placeholder="+91 Phone Number" id="number"  />
+                <div id="captcha"></div>
+                <a onclick="phoneAuth();">Verify Phone Number</a>
+                <input type="text" placeholder="OTP" id="otp" />
+                <button onclick="codeverify();">Register</button>
+            </form>
+        </div>
+
+        <div class="form-container sign-in-container">
+            <div id="form">
+                <h1>Log In Using Google</h1>
+                <p id="user-details"></p>
+                <button onclick="Signin()"><i class="fa-brands fa-google" style="color: #ffffff; font-size: large;"></i></button>
+            </div>
+        </div>
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Log In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Chief!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyB6Q9ucZ_aMSCoZSAeJFnYe7epxSK7WP8w",
+            authDomain: "dine-in-0416.firebaseapp.com",
+            projectId: "dine-in-0416",
+            storageBucket: "dine-in-0416.appspot.com",
+            messagingSenderId: "105397111835",
+            appId: "1:105397111835:web:a7ac7f70307adee53cfcbe"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="Assets/Script/app.js"></script>
+    <script src="Assets/Script/otp.js"></script>
+    <script src="Assets/Script/sign.js"></script>
+</body>
+
+</html>
